@@ -1,9 +1,20 @@
+import { Link } from "react-router-dom"
+
+function Test(){
+    
+   
+    return <div>hello hoss</div>;
+
+    
 
 
-function test(){
-    page =  
+}
+export default Test;
+
+/*
+(
     <div class="container-fluid">  
-        
+    
     <div class="d-flex">
 
       <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 20vh; height: 100vh;">
@@ -45,9 +56,5 @@ function test(){
     </div>
 
             
-    </div>;
-    return page;
-
-
-}
-export default test;
+    </div>
+);*/
