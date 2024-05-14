@@ -1,61 +1,58 @@
-.text{
-    color: white;
+.text {
+  color: white;
 }
 
-.input-label{
-    margin: 30px;
-    background: none;
-    border: none;
-    outline: none;
-    max-width: 190px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 9999px;
-    color: white;
+.input-label {
+  margin: 30px;
+  background: none;
+  border: none;
+  outline: none;
+  max-width: 190px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 9999px;
+  color: white;
 }
 
-.center{
-    text-align: center;
+.center {
+  text-align: center;
 }
-.buttons{
-    position: relative;
-    margin-left: 20px;
-    padding-bottom: 20px;
-    padding-top: 30px;
-    padding-right: 10px;
-    display: inline-block;
+.buttons {
+  position: relative;
+  margin-left: 20px;
+  padding-bottom: 20px;
+  padding-top: 30px;
+  padding-right: 10px;
+  display: inline-block;
 }
 
 .inputBox {
-    position: relative;
-    margin-left: 30%;
-  }
-  
-  .inputBox input {
-    padding: 15px 20px;
-    outline: none;
-    background: transparent;
-    border-radius: 5px;
-    color: #e8e8e8;
-    border: 1px solid#e8e8e8;
-    font-size: 1em;
-    
-  }
-  
-  .inputBox span {
-    position: absolute;
-    left: 0;
-    font-size: 0.7em;
-    transform: translateX(14px) translateY(-7.5px);
-    padding: 0 6px 1px 5px;
-    border-radius: 2px;
-    background: #212121;
-    letter-spacing: 1px;
-    border: 1px solid #e8e8e8;
-    color: #e8e8e8;
-  }
+  position: relative;
+  margin-left: 30%;
+}
 
+.inputBox input {
+  padding: 15px 20px;
+  outline: none;
+  background: transparent;
+  border-radius: 5px;
+  color: #e8e8e8;
+  border: 1px solid#e8e8e8;
+  font-size: 1em;
+}
 
+.inputBox span {
+  position: absolute;
+  left: 0;
+  font-size: 0.7em;
+  transform: translateX(14px) translateY(-7.5px);
+  padding: 0 6px 1px 5px;
+  border-radius: 2px;
+  background: #212121;
+  letter-spacing: 1px;
+  border: 1px solid #e8e8e8;
+  color: #e8e8e8;
+}
 
 /* CSS */
 .button-85 {
@@ -113,7 +110,6 @@
   }
 }
 
-
 .button-85:after {
   z-index: -1;
   content: "";
@@ -130,19 +126,89 @@
   display: flex;
   flex-wrap: wrap;
   gap: 80px;
-  padding-top: 100px; 
+  padding-top: 100px;
   padding-left: 90px;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  
 }
-.theProduct-box {
+
+.product-box {
   border: 1px solid #565454;
-  width: 500px;
+  width: calc(100% - 800px); /* Set width to remaining space after details */
+  position: relative;
+  perspective: 100px;
+}
+
+.product-image-container {
   position: relative;
   perspective: 1000px;
 }
+
+.product-image {
+  width: 100%;
+  height: auto;
+  transition:
+    transform 0.5s,
+    filter 0.5s; /* Transition for transform and filter */
+}
+
+.product-image:hover {
+  transform: rotateY(180deg); /* Flip the image on hover */
+  filter: blur(5px); /* Apply blur effect on hover */
+}
+
+.product-box:hover ~ .product-image-container .product-image {
+  transform: rotateY(
+    180deg
+  ); /* Flip the image when .product-details is hovered */
+  filter: blur(5px); /* Apply blur effect on hover */
+}
+
+.product-info {
+  padding: 10px;
+}
+
+.product-name,
+.product-price {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(190, 188, 188, 0.9);
+  padding: 5px;
+  width: 50%; /* Adjust width for side-by-side display */
+  margin: 0;
+  text-align: center;
+}
+
+.product-price {
+  left: 50%; /* Position price next to name */
+}
+
+.product-details {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  color: white;
+  width: 100%; /* Set fixed width for details */
+  height: 90%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  bottom: 10%;
+}
+
+.product-box:hover .product-details {
+  opacity: 1;
+}
+
+.description-hidden {
+  display: none;
+}
+
+.product-box:hover .description-hidden {
+  display: block;
+}
+p {
+  font-size: 30px;
+}
+
 /*
     Alternative Input Field Style
 
@@ -159,5 +225,3 @@
     color: #fff;
   }
 */
-
-
